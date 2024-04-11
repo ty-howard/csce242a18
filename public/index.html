@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Written by Ty Howard-->
+    <title>Assignment 18</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Craft Gallery <a href="#" id="add-link">+</a></h1>
+    </header>
+    <div class="content">
+        <div class="container" id="gallery"></div>
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content" id="modal-content">
+                <span class="close">&times;</span>
+                <div class="columns" id="mod-body"></div>
+            </div>
+          
+          </div>
+    </div>
+
+     <!-- Edit Modal -->
+     <div id="dialog" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <span onclick="document.getElementById('dialog').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+              <section id="dialog-details">
+                <form id="add-craft-form" method="post" class="hidden">
+                    <input type="hidden" id="_id" name="_id">
+                    <p>
+                        <label for="name ">Craft Name:</label>
+                        <input type="text" id="name" name="name" required minlength="3"/>
+                    </p>
+                    <p>
+                        <label for="description">Description:</label>
+                        <input type="text" id="description" name="description" required minlength="3"/>
+                    </p>
+        
+                    <section class="columns">
+                        <p id="img-prev-section">
+                            <img id="img-prev">
+                        </p>
+                        <p>
+                            <label for="img" class="btn">Select an Image</label>
+                            <input type="file" id="img" name="img" accept="image/*" />
+                        </p>
+                    </section>
+        
+                    <p id="supplies-p ">
+                        <button id="add-supply" class="btn">Add Supply</button>
+                        <section id="supply-boxes"></section>
+                    </p>
+                    <p>
+                        <button type="submit" class="btn">Submit</button>
+                    </p>
+                </form>
+                <button onclick="document.getElementById('dialog').style.display='none'" class="hidden">Cancel</button>
+
+                <section id="craft-details" class="hidden">
+
+                </section>
+            </section>
+          </div>
+        </div>
+      </div>   
+    </div>
+    <div id="warn" class="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                <span onclick="document.getElementById('warn').style.display='none'"
+                class="w3-button w3-display-topright">&times;</span>
+                    <h3>
+                        Warning!
+                    </h3>
+                    <p>
+                        Are you sure you want to delete this craft?
+                    </p>
+                    <p>
+                        <button id="del-final" type="submit" class="btn">Yes, Delete Craft</button>
+                    </p>
+            </div>
+        </div> 
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

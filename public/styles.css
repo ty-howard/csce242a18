@@ -1,0 +1,166 @@
+/* Code inspired from https://www.smashingmagazine.com/native-css-masonry-layout-css-grid/ */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #FFF;
+  }
+  
+  /* Structure */
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  figure {
+    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin-bottom: 10px;
+    break-inside: avoid;
+    max-width: 300px;
+    cursor: pointer;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  
+  figure > img {
+    grid-row: 1 / -1;
+    grid-column: 1;
+  }
+  
+  .container {
+    column-count: 2;
+    column-gap: 1px;
+    max-width: 1250px;
+    display: block;
+    margin: auto;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .columns section {
+    padding: 1%;
+    margin: 1%;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #img-prev-section {
+    width: 100px;
+    border: 1px solid #401e01;
+    max-width: 100px;
+    margin-right: 5px;
+  }
+  #img-prev {
+    padding: 2.5%;
+    display: block;
+    margin: auto;
+    max-width: 95%;
+  }
+  
+  /* Typography */
+  
+  h1 {
+    color: green;
+    margin-top: 20px;
+    text-align: center;
+    padding: 0;
+  }
+
+  #add-link {
+    text-decoration: none;
+  }
+  
+  #edit-link {
+    float: right;
+    margin-right: 10px;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+  }
+  
+  #delete-link {
+    float: right;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+    margin-right: 20px;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+  
+  .btn {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #EEEEEE;
+    color: green;
+  }
+  
+  /* Larger Resolutions */
+  
+  @media only screen and (min-width: 700px) {
+    .container {
+      column-count: 4;
+      column-gap: 1px;
+      max-width: 1250px;
+      display: block;
+      margin: auto;
+    }
+  
+    .columns {
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .one {
+      flex: 1;
+    }
+    
+    .two {
+      flex: 2;
+    }
+
+    .hidden {
+        display: none;
+    }
+    
+  }
